@@ -17,6 +17,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.xxx</groupId>
+            <artifactId>xxx-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.54chen</groupId>
             <artifactId>paoding-rose-scanning</artifactId>
             <version>1.0</version>
