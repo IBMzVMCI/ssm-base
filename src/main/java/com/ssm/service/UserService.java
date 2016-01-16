@@ -1,5 +1,6 @@
 package com.ssm.service;
 
+import com.ssm.domain.SzUser;
 import com.ssm.domain.User;
 
 /**
@@ -8,4 +9,8 @@ import com.ssm.domain.User;
 public interface UserService {
 
     User getUserById(int userId);
+
+    SzUser getSzUserById(int userId);
+
+    int addSzUser(SzUser szUser);
 }

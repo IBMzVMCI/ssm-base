@@ -26,7 +26,7 @@
         <!-- ����ӳ���ļ��İ�����λ��-->  
         <sqlMapGenerator targetPackage="com.ssm.mapping" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>  
-        </sqlMapGenerator>  
+        </sqlMapGenerator>
         <!-- ����DAO�İ�����λ��-->  
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssm.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>  
