@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="5 seconds">
+    <timestamp key="byDay" datePattern="yyyy-MM-dd"/>
+    <timestamp key="byHour" datePattern="yyyy-MM-dd-HH"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="timecostAppender" class="ch.qos.logback.core.FileAppender">
+        <file>/data/logs/timecost/timecost-${byDay}.log</file>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="access" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>/data/logs/access/access.%d.log.zip</FileNamePattern>
+        </rollingPolicy>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}|%m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>/data/logs/timecost/timecost-${byDay}.log</file>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %c %m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="login" class="ch.qos.logback.core.FileAppender">
+        <file>/data/logs/inter/timecost-${byDay}.log</file>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss}, %p, %c %m%n</pattern>
+        </layout>
+    </appender>
+    <!--主工程的log只打info-->
+    <logger name="com.xxx.web" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="com.xxx.web.util" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="timecostAppender"/>
+    </logger>
+
+    <logger name="access" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="access"/>
+    </logger>
+
+    <!-- 性能监控 Start -->
+    <appender name="perf4jFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/data/logs/performance/performance.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>/data/logs/performance/performance.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="perf4j" class="com.renren.zhaopin.interceptors.logback.Slf4JAsyncCoalescingStatisticsAppender">
+        <!--时间间隔-->
+        <param name="timeSlice" value="60000"/>
+        <appender-ref ref="perf4jFile"/>
+    </appender>
+
+    <logger name="performance" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="perf4j"/>
+    </logger>
+    <!-- 性能监控 End -->
+
+    <root>
+        <level value="ERROR"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
