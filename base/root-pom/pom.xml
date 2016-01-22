@@ -126,16 +126,16 @@
             <version>1.2-SNAPSHOT</version>
         </dependency>-->
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>3.2.8.RELEASE</version>
         </dependency>
-        &lt;!&ndash;<dependency>
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>3.2.8.RELEASE</version>
-        </dependency>&ndash;&gt;
+        </dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -145,7 +145,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>3.2.8.RELEASE</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
