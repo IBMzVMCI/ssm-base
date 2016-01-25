@@ -1,6 +1,6 @@
 package com.xxx.commons;
 
-import com.xxx.commons.model.Hr;
+import com.xxx.bean.Hr;
 
 public interface ActiveHolder {
     /**

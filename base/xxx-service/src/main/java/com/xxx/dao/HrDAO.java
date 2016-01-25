@@ -1,7 +1,7 @@
 package com.xxx.dao;
 
+import com.xxx.bean.Hr;
 import com.xxx.bean.HrInfo;
-import com.xxx.commons.model.Hr;
 import net.paoding.rose.jade.annotation.DAO;
 import net.paoding.rose.jade.annotation.SQL;
 

@@ -1,6 +1,6 @@
 package com.xxx.commons.util;
 
-import com.xxx.commons.model.Hr;
+import com.xxx.bean.Hr;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

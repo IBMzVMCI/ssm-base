@@ -1,7 +1,5 @@
 package com.xxx.bean;
 
-import com.xxx.commons.model.Hr;
-
 public class HrInfo extends Hr {
 
 

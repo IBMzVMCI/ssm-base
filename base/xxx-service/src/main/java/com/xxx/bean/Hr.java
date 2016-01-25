@@ -1,4 +1,4 @@
-package com.xxx.commons.model;
+package com.xxx.bean;
 
 import java.io.Serializable;
 import java.util.Date;

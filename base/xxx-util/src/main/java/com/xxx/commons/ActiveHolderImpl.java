@@ -1,7 +1,6 @@
 package com.xxx.commons;
 
-
-import com.xxx.commons.model.Hr;
+import com.xxx.bean.Hr;
 import com.xxx.commons.util.BaseThreadUtil;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.InvocationLocal;

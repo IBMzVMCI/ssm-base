@@ -1,5 +1,8 @@
 package com.xxx.commons.loginrequired;
 
+import com.xxx.bean.Module;
+import com.xxx.bean.RightType;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -20,4 +23,10 @@ import java.lang.annotation.Target;
 public @interface LoginRequired {
 
 	int LOGIN_REQUIRED_PRIV = 20000;
+
+	Module privilege();   //权限要求
+
+	RightType rightType() default RightType.READ; //读写权限，默认所有都有
+
+//	public ContentType contentType() default ContentType.HTML; //视图的ContentType
 }

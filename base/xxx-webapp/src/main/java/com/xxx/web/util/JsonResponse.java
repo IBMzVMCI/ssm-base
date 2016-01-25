@@ -7,11 +7,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * User : liwenjun
- * Email: liwenjun@ikaku.com
- * Time : 12-2-22 下午4:33
- */
 public class JsonResponse {
 
     public static String badResult(String cause) {

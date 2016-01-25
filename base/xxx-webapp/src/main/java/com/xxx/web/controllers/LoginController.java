@@ -1,12 +1,15 @@
 package com.xxx.web.controllers;
 
+import com.xxx.bean.Hr;
+import com.xxx.bean.Module;
 import com.xxx.commons.ActiveHolder;
 import com.xxx.commons.access.ValidateRequestToken;
 import com.xxx.commons.loginrequired.LoginRequired;
-import com.xxx.commons.model.Hr;
 import com.xxx.commons.originurl.OrigURLInterceptor;
 import com.xxx.commons.util.CookieManager;
 import com.xxx.commons.util.PassportManager;
+import com.xxx.service.HrPassportService;
+import com.xxx.service.HrService;
 import com.xxx.util.Passport;
 import com.xxx.util.TicketGenerater;
 import com.xxx.web.util.Commons;
@@ -24,9 +27,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-/**
- * Created by xujinchao on 2016/1/21.
- */
 @Path("")
 public class LoginController {
 
@@ -41,7 +41,13 @@ public class LoginController {
     private TicketGenerater ticketGenerater;
 
     @Autowired
-    private ActiveHolder hostHolder;
+    private ActiveHolder activeHolder;
+
+    @Autowired
+    private HrPassportService hrPassportService;
+
+    @Autowired
+    private HrService hrService;
 
     /**
      * 登录页面
@@ -53,7 +59,7 @@ public class LoginController {
     public String login(Invocation inv) throws UnsupportedEncodingException {
         Integer xiaozhaoUid = passportManager.validateTicket(inv.getRequest(), inv.getResponse());
         if (xiaozhaoUid != null && xiaozhaoUid > 0) {
-            //added by aiguoxin 登陆后直接访问页面，就直接跳转到访问页
+            //added by agx 登陆后直接访问页面，就直接跳转到访问页
             Object origURL = inv.getParameter(OrigURLInterceptor.REQ_ATTR_ORIG_URL);
             if (origURL != null) {
                 String url = (String) origURL;
@@ -63,9 +69,9 @@ public class LoginController {
             return "r:/";
         }
 
-        Hr rrHost = hostHolder.getUser();
+        Hr rrHost = activeHolder.getUser();
         if (rrHost != null) {
-            inv.addModel("rruid", "&uid=" + rrHost.getId());
+            inv.addModel("rruid", "&uid=" + rrHost.getUid());
         }
         return "login";
     }
@@ -101,7 +107,7 @@ public class LoginController {
             return JsonResponse.badResult(Commons.EMPEY_VALIDATE_IMAGE);
         }
 
-        Hr user = hostHolder.getUser();
+        Hr user = activeHolder.getUser();
 
         String id;
         //如果有XX的t票， 则使用rr2uid去验证
@@ -181,7 +187,7 @@ public class LoginController {
     @Get("logout")
     @LoginRequired(privilege = Module.IGNORE)
     public String logout(Invocation inv, @Param("origURL") String origURL) {
-        Hr hr = userHolder.getUser();
+        Hr hr = activeHolder.getUser();
         passportManager.clearTicketFromCache(hr.getUid());
         passportManager.clearTicketFromCookie(inv.getResponse());
         return "r:/login";

@@ -15,7 +15,7 @@ public class AntiCsrfUtil {
 	/**
 	 * 计算token时用的一个随机字符串，目的是不让用户猜到算法
 	 */
-	public static final String TOKEN_PREFIX = "843a3582";
+	public static final String TOKEN_PREFIX = "854a3683";
 	
 	/**
 	 * 根据指定ticket计算requestToken
@@ -77,12 +77,9 @@ public class AntiCsrfUtil {
 
 		return AntiCsrfUtil.validateToken(ticket, requestToken);
 	}
-
 	public static String generateToken(HttpServletRequest request) {
-		
 		// 从cookie中取t票
-		String ticket = CookieManager.getInstance().getCookie(request,
-				PassportManager.LOGINKEY_TICKET);
+		String ticket = CookieManager.getInstance().getCookie(request, PassportManager.LOGINKEY_TICKET);
 		if (ticket == null) {
 			//没有票的情况就用客户端地址
 			ticket = request.getRemoteAddr();
@@ -96,4 +93,5 @@ public class AntiCsrfUtil {
 		}
 		return AntiCsrfUtil.digestToken(ticket);
 	}
+
 }

@@ -4,9 +4,9 @@ import java.lang.annotation.Annotation;
 import java.util.BitSet;
 import java.util.List;
 
+import com.xxx.bean.Hr;
 import com.xxx.commons.ActiveHolder;
 import com.xxx.commons.admin.AdminProtection;
-import com.xxx.commons.model.Hr;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 

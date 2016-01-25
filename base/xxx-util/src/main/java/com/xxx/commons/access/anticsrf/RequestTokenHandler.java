@@ -12,7 +12,7 @@ public interface RequestTokenHandler {
 	 * 验证token是否合法，合法返回true，不合法返回相关的提示。
 	 * 
 	 */
-	public boolean validateToken(HttpServletRequest request);
+	boolean validateToken(HttpServletRequest request);
 	
 	/**
 	 * 生成token
@@ -20,5 +20,5 @@ public interface RequestTokenHandler {
 	 * @param request
 	 * @return
 	 */
-	public String generateToken(HttpServletRequest request);
+	String generateToken(HttpServletRequest request);
 }

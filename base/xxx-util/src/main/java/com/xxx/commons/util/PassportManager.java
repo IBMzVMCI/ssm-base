@@ -1,6 +1,6 @@
 package com.xxx.commons.util;
 
-import com.xxx.commons.model.Hr;
+import com.xxx.bean.Hr;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

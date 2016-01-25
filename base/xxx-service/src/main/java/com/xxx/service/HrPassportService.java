@@ -1,6 +1,6 @@
 package com.xxx.service;
 
-import com.xxx.commons.model.Hr;
+import com.xxx.bean.Hr;
 import com.xxx.dao.HrDAO;
 import com.xxx.dao.HrPassportDAO;
 import com.xxx.util.MD5;

@@ -2,9 +2,9 @@ package com.xxx.commons.admin;
 
 import java.lang.annotation.Annotation;
 
+import com.xxx.bean.Hr;
 import com.xxx.commons.ActiveHolder;
 import com.xxx.commons.loginrequired.LoginRequired;
-import com.xxx.commons.model.Hr;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 
@@ -66,7 +66,7 @@ public class AdminProtectionInterceptor extends ControllerInterceptorAdapter {
 //            inv.addFlash("msg", "请先登录管理员");
 //            return "r:" + OpiConstants.urlAdmin + "/loginAdmin.do";
 //        }
-        LoginAdminLogic.resetCookie(inv.getResponse(), host.getId());
+        LoginAdminLogic.resetCookie(inv.getResponse(), host.getUid());
         return true;
     }
 
