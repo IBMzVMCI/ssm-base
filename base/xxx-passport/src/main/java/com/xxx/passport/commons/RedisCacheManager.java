@@ -1,4 +1,4 @@
-package com.xxx.commons.util;
+package com.xxx.passport.commons;
 
 import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
@@ -13,7 +13,6 @@ import javax.annotation.Resource;
 
 /**
  * Redis管理工具
- * User: ChunYang.Ding
  * Date: 14-8-7
  * Time: 下午8:39
  */

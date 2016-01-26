@@ -1,11 +1,13 @@
-package com.xxx.util;
+package com.xxx.service;
 
+import com.xxx.bean.Passport;
+import com.xxx.util.MD5;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Service
+@Component
 public class XTicketGenerater implements TicketGenerater {
     @Override
     public String generate(int hostId, Passport passport, HttpServletRequest request) {

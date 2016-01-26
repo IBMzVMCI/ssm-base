@@ -4,7 +4,7 @@ import com.xxx.bean.Hr;
 import com.xxx.dao.HrDAO;
 import com.xxx.dao.HrPassportDAO;
 import com.xxx.util.MD5;
-import com.xxx.util.Passport;
+import com.xxx.bean.Passport;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -36,7 +36,7 @@ public class BaseThreadUtil {
 	 * @param ticket
 	 */
 	public static void setTicket(HttpServletRequest request, String ticket) {
-		request.setAttribute(PassportManager.LOGINKEY_TICKET, ticket);
+		request.setAttribute("PassportManager.LOGINKEY_TICKET", ticket);
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class BaseThreadUtil {
 	 * @return
 	 */
 	public static String currentTicket(HttpServletRequest request) {
-		return (String)request.getAttribute(PassportManager.LOGINKEY_TICKET);
+		return (String)request.getAttribute("PassportManager.LOGINKEY_TICKET");
 	}
 	
 	public static boolean beginJDBCTranx() throws SQLException {

@@ -1,13 +1,18 @@
-package com.xxx.commons.util;
+package com.xxx.passport.access;
 
 import com.xxx.bean.Hr;
+import com.xxx.passport.commons.CookieManager;
+import com.xxx.passport.commons.RedisCacheManager;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Component
 public class XPassportManager implements PassportManager {
 
     private static String KEY_PREFIX_USER = "xxx:user:";

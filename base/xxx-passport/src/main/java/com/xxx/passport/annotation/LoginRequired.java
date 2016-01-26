@@ -1,4 +1,4 @@
-package com.xxx.commons.loginrequired;
+package com.xxx.passport.annotation;
 
 import com.xxx.bean.Module;
 import com.xxx.bean.RightType;

@@ -1,4 +1,4 @@
-package com.xxx.commons.access;
+package com.xxx.passport.access;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -9,9 +9,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://page1.yz.db.d.xiaonei.com:3309/rr_zhaopin?useUnicode=true&amp;characterEncoding=utf-8"/>
-        <property name="username" value="withoutxce@RR"/>
-        <property name="password" value="0n1y4NoXceServ"/>
+                  value="jdbc:mysql://127.0.0.1:3306/show_zhan?useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
         <!-- 运行判断连接超时任务的时间间隔，单位为毫秒，默认为-1，即不执行任务。 -->
         <property name="timeBetweenEvictionRunsMillis" value="3600000"/>
         <!-- 连接的超时时间，默认为半小时。 -->

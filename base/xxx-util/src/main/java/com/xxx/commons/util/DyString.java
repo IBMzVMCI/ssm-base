@@ -8,9 +8,7 @@ package com.xxx.commons.util;
  * <p>
  * 用于集合的要求<br>
  * 不可用用于Set， HashMap， Hashtable等环境中，建议只用在LinkedList, ArrayList存放
- * 
- * @author zhiliang.wang
- * 
+ *
  */
 public abstract class DyString implements CharSequence {
 

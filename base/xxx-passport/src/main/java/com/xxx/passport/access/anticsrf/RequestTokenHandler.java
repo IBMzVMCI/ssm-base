@@ -1,4 +1,4 @@
-package com.xxx.commons.access.anticsrf;
+package com.xxx.passport.access.anticsrf;
 
 import javax.servlet.http.HttpServletRequest;
 

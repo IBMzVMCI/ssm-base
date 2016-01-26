@@ -1,4 +1,4 @@
-package com.xxx.commons.util;
+package com.xxx.passport.commons;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CookieManager {
 
-	private final String DOMAIN = "";// ".xiaozhao.renren.com";
+	private final String DOMAIN = "";// ".xz.rr.com";
 
 	private static CookieManager instance;
 

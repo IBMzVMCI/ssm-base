@@ -1,6 +1,6 @@
-package com.xxx.commons.access.anticsrf;
+package com.xxx.passport.access.anticsrf;
 
-import com.xxx.commons.util.AntiCsrfUtil;
+import com.xxx.passport.util.AntiCsrfUtil;
 
 import javax.servlet.http.HttpServletRequest;
 

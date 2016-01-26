@@ -1,12 +1,13 @@
-package com.xxx.commons.loginrequired;
+package com.xxx.passport.interceptor;
 
 import java.lang.annotation.Annotation;
 import java.util.BitSet;
 import java.util.List;
 
 import com.xxx.bean.Hr;
-import com.xxx.commons.ActiveHolder;
-import com.xxx.commons.admin.AdminProtection;
+import com.xxx.passport.annotation.LoginRequired;
+import com.xxx.passport.login.LoginRequiredHandler;
+import com.xxx.service.ActiveHolder;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 
@@ -34,7 +35,7 @@ public class LoginRequiredInterceptor extends ControllerInterceptorAdapter {
 
     @Override
     protected final List<Class<? extends Annotation>> getRequiredAnnotationClasses() {
-        return createList(1).add(LoginRequired.class).add(AdminProtection.class).getList();
+        return ControllerInterceptorAdapter.createList(1).add(LoginRequired.class).getList();
     }
 
     @Override

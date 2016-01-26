@@ -3,8 +3,6 @@ package com.xxx.commons.util;
 import java.security.MessageDigest;
 
 /**
- * @author Li Weibo
- *
  */
 public class MD5 {
 	private static final char  hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

@@ -1,8 +1,8 @@
-package com.xxx.commons.access.anticsrf;
+package com.xxx.passport.access.anticsrf;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.xxx.commons.access.ValidateRequestToken;
+import com.xxx.passport.access.ValidateRequestToken;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Interceptor;

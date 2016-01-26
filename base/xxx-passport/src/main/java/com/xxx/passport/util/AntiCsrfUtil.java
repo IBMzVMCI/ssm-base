@@ -1,5 +1,7 @@
-package com.xxx.commons.util;
+package com.xxx.passport.util;
 
+import com.xxx.passport.access.PassportManager;
+import com.xxx.passport.commons.CookieManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,7 +66,7 @@ public class AntiCsrfUtil {
 				PassportManager.LOGINKEY_TICKET);
 
 		if (ticket == null) {
-			//没有票的情况就用客户端地址
+            //no ticket, use client addr
 			ticket = request.getRemoteAddr();
 			if (logger.isDebugEnabled()) {
 				logger.debug("use remote adresss to validate token: " + ticket);
@@ -78,10 +80,9 @@ public class AntiCsrfUtil {
 		return AntiCsrfUtil.validateToken(ticket, requestToken);
 	}
 	public static String generateToken(HttpServletRequest request) {
-		// 从cookie中取t票
 		String ticket = CookieManager.getInstance().getCookie(request, PassportManager.LOGINKEY_TICKET);
 		if (ticket == null) {
-			//没有票的情况就用客户端地址
+			//no ticket, use client addr
 			ticket = request.getRemoteAddr();
 			if (logger.isDebugEnabled()) {
 				logger.debug("use remote adresss to digest token: " + ticket);

@@ -1,4 +1,6 @@
-package com.xxx.util;
+package com.xxx.service;
+
+import com.xxx.bean.Passport;
 
 import javax.servlet.http.HttpServletRequest;
 

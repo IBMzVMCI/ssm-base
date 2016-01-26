@@ -1,4 +1,4 @@
-package com.xxx.commons.loginrequired;
+package com.xxx.passport.login;
 
 import net.paoding.rose.web.Invocation;
 

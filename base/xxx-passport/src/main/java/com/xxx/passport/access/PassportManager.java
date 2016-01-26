@@ -1,4 +1,4 @@
-package com.xxx.commons.util;
+package com.xxx.passport.access;
 
 import com.xxx.bean.Hr;
 

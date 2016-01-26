@@ -1,6 +1,6 @@
 package com.xxx.dao;
 
-import com.xxx.util.Passport;
+import com.xxx.bean.Passport;
 import net.paoding.rose.jade.annotation.DAO;
 import net.paoding.rose.jade.annotation.ReturnGeneratedKeys;
 import net.paoding.rose.jade.annotation.SQL;

@@ -67,15 +67,15 @@
         </layout>
     </appender>
 
-    <appender name="perf4j" class="com.renren.zhaopin.interceptors.logback.Slf4JAsyncCoalescingStatisticsAppender">
-        <!--时间间隔-->
+   <!-- <appender name="perf4j" class="com.xxx.web.interceptors.logback.Slf4JAsyncCoalescingStatisticsAppender">
+        &lt;!&ndash;时间间隔&ndash;&gt;
         <param name="timeSlice" value="60000"/>
         <appender-ref ref="perf4jFile"/>
-    </appender>
+    </appender>-->
 
     <logger name="performance" additivity="false">
         <level value="INFO"/>
-        <appender-ref ref="perf4j"/>
+       <!-- <appender-ref ref="perf4j"/>-->
     </logger>
     <!-- 性能监控 End -->
 

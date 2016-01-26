@@ -1,11 +1,10 @@
-package com.xxx.commons.loginrequired;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
-import javax.servlet.http.HttpServletRequest;
+package com.xxx.passport.login;
 
 import net.paoding.rose.web.Invocation;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 //import com.xiaonei.commons.interceptors.access.MarkingHelper;
 //import com.xiaonei.platform.core.opt.OpiConstants;
