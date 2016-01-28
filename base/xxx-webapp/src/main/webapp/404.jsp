@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>个人简历模板</title>
-	<meta http-equiv="refresh" content="5; url=http://xiaozhao.renren.com"/>
+	<meta http-equiv="refresh" content="5; url=http://www.baidu.com"/>
 </head>
 <body>
 

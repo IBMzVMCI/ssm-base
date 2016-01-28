@@ -6,9 +6,8 @@ import com.xxx.passport.access.ValidateRequestToken;
 import net.paoding.rose.web.ControllerInterceptorAdapter;
 import net.paoding.rose.web.Invocation;
 import net.paoding.rose.web.annotation.Interceptor;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * RequestTokenInterceptor的作用是防范CSRF攻击
@@ -18,7 +17,7 @@ public class RequestTokenInterceptor extends ControllerInterceptorAdapter {
 
 	public static final String REQ_TOKEN_ATTRIBUTE_NAME = "_rtk";
 	
-	protected Log logger = LogFactory.getLog(this.getClass());
+	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public RequestTokenInterceptor() {
 		setPriority(29901); // 1 larger than PassportValidationInterceptor

@@ -40,6 +40,7 @@ public class RedisCacheManager {
                     return instance;
                 }
                 instance = (RedisCacheManager) BeanFactoryUtils.beanOfType(context, RedisCacheManager.class);
+                instance = new RedisCacheManager();
             }
         }
         return instance;

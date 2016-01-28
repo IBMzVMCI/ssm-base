@@ -2,10 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
        default-autowire="byName" default-lazy-init="false">
     <!--数据源配置 dbcp(测试数据库)-->
     <bean id="jade.dataSource.com.xxx.dao" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mysql://127.0.0.1:3306/show_zhan?useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+        <!-- 运行判断连接超时任务的时间间隔，单位为毫秒，默认为-1，即不执行任务。 -->
+        <property name="timeBetweenEvictionRunsMillis" value="3600000"/>
+        <!-- 连接的超时时间，默认为半小时。 -->
+        <property name="minEvictableIdleTimeMillis" value="3600000"/>
+    </bean>
+
+    <bean id="jade.dataSource.com.xxx.dao.HrPassportDAO" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"

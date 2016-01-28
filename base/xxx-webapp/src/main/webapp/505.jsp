@@ -10,13 +10,13 @@
     <link href="http://s.xnimg.cn/xiaozhao/styles/hr/hbootstrap.css?ver=$revxxx" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<%@include file="/include/header.jsp" %>
+<%@include file="views/include/header.jsp" %>
 <div id="mainWrapper" class="clearfix">
     <div class="mainContent errorPage">
 
         <div class="errorChild500">
             <div class="errorInfo">
-                <p class="con500">您目前没有权限访问该页面，请联系超级管理员</p>
+                <p class="con500">您目前没有权限访问该页面，请联系管理员</p>
 
                 <a href="#" class="goBack">返回上一页</a>
             </div>

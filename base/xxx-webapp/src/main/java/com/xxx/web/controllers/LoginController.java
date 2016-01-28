@@ -7,11 +7,8 @@ import com.xxx.commons.originurl.OrigURLInterceptor;
 import com.xxx.passport.access.PassportManager;
 import com.xxx.passport.annotation.LoginRequired;
 import com.xxx.passport.commons.CookieManager;
-import com.xxx.service.ActiveHolder;
-import com.xxx.service.HrPassportService;
-import com.xxx.service.HrService;
+import com.xxx.service.*;
 import com.xxx.bean.Passport;
-import com.xxx.service.TicketGenerater;
 import com.xxx.web.util.Commons;
 import com.xxx.web.util.JsonResponse;
 import net.paoding.rose.web.Invocation;
@@ -48,6 +45,9 @@ public class LoginController {
 
     @Autowired
     private HrService hrService;
+
+    @Autowired
+    private SzUserService szUserService;
 
     /**
      * 登录页面

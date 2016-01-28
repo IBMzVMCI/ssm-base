@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author 李文军 wenjun.li1@renren-inc.com.
- * @since 12-11-13 下午12:01
  */
 @Service
 public class HrPassportService {

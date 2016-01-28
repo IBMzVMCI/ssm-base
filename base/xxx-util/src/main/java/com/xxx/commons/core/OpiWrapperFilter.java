@@ -1,6 +1,3 @@
-/*
- * Copyright 2009-2010 Oak Pacific Interactive. All rights reserved.
- */
 package com.xxx.commons.core;
 
 import java.io.IOException;
@@ -18,19 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * <p>
  * 
  * 请将此 {@link Filter} 配置到web.xml中所有filter的最前面。参考配置如下：
- * 
- * <pre>
- * &lt;filter&gt;
- *    &lt;filter-name&gt;OpiWrapperFilter&lt;/filter-name&gt;
- *    &lt;filter-class&gt;com.xxx.commons.core.OpiWrapperFilter&lt;/filter-class&gt;
- * &lt;/filter&gt;
- * &lt;filter-mapping&gt;
- *    &lt;filter-name&gt;OpiWrapperFilter&lt;/filter-name&gt;
- *    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
- * &lt;/filter-mapping&gt;
- * 
- * <pre>
- *
+ **
  */
 public class OpiWrapperFilter implements Filter {
 
