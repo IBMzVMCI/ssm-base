@@ -47,7 +47,7 @@ public class LoginController {
     private HrService hrService;
 
     @Autowired
-    private SzUserService szUserService;
+    private UserService userService;
 
     /**
      * 登录页面

@@ -29,29 +29,9 @@ public class OpiConstants {
 
 	private static final ThreadLocal<String> domains = new ThreadLocal<String>();
 
-	// /**
-	// * 请改为使用 {@link #setCurrentDomain(String)}
-	// *
-	// * @param request
-	// */
-	// @Deprecated
-	// public static void setRequest(ServletRequest request) {
-	// requests.set(request);
-	// domains.set(findDomain(request));
-	// }
-
-	// /**
-	// * 请改为使用 {@link #getCurrentDomain()}
-	// *
-	// * @return
-	// */
-	// @Deprecated
-	// public static HttpServletRequest getRequest() {
-	// return (HttpServletRequest) requests.get();
-	// }
 
 	/**
-	 * 返回当前请求的域名(renren.com、kaixin.com)
+	 * 返回当前请求的域名
 	 * 
 	 * @return
 	 */
@@ -125,7 +105,7 @@ public class OpiConstants {
 	}
 
 	/**
-	 * 根据当前线程绑定的请求对象，获取在domainIdentified.renren.com.xml/
+	 * 根据当前线程绑定的请求对象，获取在domainIdentified.rr.com.xml/
 	 * domainIdentifiedkaixin.com.xml相应key的value串,如果没有定义相应的key时,则返回defValue
 	 * 
 	 * @param key
@@ -171,21 +151,8 @@ public class OpiConstants {
 	// private static String defaultDomain;
 
 	private static String getDefaultDomain() {
-		return defXiaoneiDomain;
-		/*
-		 * if (defaultDomain == null) { String mDomain = null; try { mDomain =
-		 * CoreConfigDAO.getInstance().getCoreConfigValue(keyDefaultDomain); }
-		 * catch (Throwable e) { e.printStackTrace(); } if (mDomain == null ||
-		 * mDomain.equals("")) { //没有取到，基本不会发生 try { if (IPAddress.isXiaonei())
-		 * { //用中间层的工具方法判断，双保险 mDomain = DOMAIN_XIAONEI; } else { mDomain =
-		 * DOMAIN_KAIXIN; } } catch (Throwable e) { e.printStackTrace(); } }
-		 * 
-		 * if (mDomain != null && mDomain.indexOf(DOMAIN_XIAONEI) >= 0) { //is
-		 * xiaonei defaultDomain = defXiaoneiDomain; } else { //is kaixin
-		 * defaultDomain = defKaixinDomain; }
-		 * 
-		 * } return defaultDomain;
-		 */
+		return defXxDomain;
+
 	}
 
 	/**
@@ -206,17 +173,12 @@ public class OpiConstants {
 	/**
 	 * 四个默认做参考的域名
 	 */
-	public static final String defXiaoneiDomain = "renren.com";
+	public static final String defXxDomain = "rr.com";
 
-	private static final String defXiaoneiStatic = "a.xnimg.cn";
+	private static final String defXxStatic = "a.xnimg.cn";
 
-	public static final String defKaixinDomain = "kaixin.com";
 
 	// private static String defKaixinStatic = "rrimg.com";
-
-	// private static String DOMAIN_XIAONEI = "renren";
-
-	// private static String DOMAIN_KAIXIN = "kaixin";
 
 	//
 	// public static final DyString domainStatic = new DyString() {
@@ -231,51 +193,20 @@ public class OpiConstants {
 	// }
 	// };
 
-	public static final String domainStatic = defXiaoneiStatic;
-
-	// static{
-	// String mDomain = null;
-	// try {
-	// mDomain =
-	// CoreConfigDAO.getInstance().getCoreConfigValue(keyDefaultDomain);
-	// } catch (Throwable e) {
-	// e.printStackTrace();
-	// }
-	// if (mDomain == null || mDomain.equals("")) { //没有取到，基本不会发生
-	// try {
-	// if (IPAddress.isXiaonei()) { //用中间层的工具方法判断，双保险
-	// mDomain = DOMAIN_XIAONEI;
-	// } else {
-	// mDomain = DOMAIN_KAIXIN;
-	// }
-	// } catch (Throwable e) {
-	// e.printStackTrace();
-	// }
-	// }
-	//
-	// if (mDomain != null && mDomain.indexOf(DOMAIN_XIAONEI) >= 0) {
-	// //is xiaonei
-	// domain = defXiaoneiDomain;
-	// domainStatic = defXiaoneiStatic;
-	// } else {
-	// //is kaixin
-	// domain = defKaixinDomain;
-	// domainStatic = defKaixinStatic;
-	// }
-	// }
+	public static final String domainStatic = defXxStatic;
 
 	/**
 	 * @return 是否是校内
 	 */
-	public static boolean isXiaonei() {
-		return defXiaoneiDomain.equals(domain.toString());
+	public static boolean isXx() {
+		return defXxDomain.equals(domain.toString());
 	}
 
 	/**
 	 * @return 是否是开心
 	 */
 	public static boolean isKaixin() {
-		return !isXiaonei();
+		return !isXx();
 	}
 
 	/**
@@ -379,8 +310,8 @@ public class OpiConstants {
 	// 校内更名人人后，头像服务的域名还没换，所以这么搞一下
 	// static {
 	// String tempDomain = domain;
-	// if (isXiaonei()) {
-	// tempDomain = "xiaonei.com";
+	// if (isXx()) {
+	// tempDomain = "Xx.com";
 	// };
 	// urlHead = "http://head." + tempDomain;
 	// urlTinyHead = "http://tiny.head." + tempDomain;
@@ -395,7 +326,7 @@ public class OpiConstants {
 	// }
 	// };
 
-	public static final String urlHead = "http://head.xiaonei.com";
+	public static final String urlHead = "http://head.Xx.com";
 
 	// public static final DyString urlTinyHead = new DyString() {
 	//
@@ -405,7 +336,7 @@ public class OpiConstants {
 	// }
 	// };
 
-	public static final String urlTinyHead = "http://tiny.head.xiaonei.com";
+	public static final String urlTinyHead = "http://tiny.head.Xx.com";
 
 	// public static final DyString urlImg = new DyString() {
 	//
@@ -415,7 +346,7 @@ public class OpiConstants {
 	// }
 	// };
 
-	public static final String urlImg = "http://img.xiaonei.com";
+	public static final String urlImg = "http://img.Xx.com";
 
 	// public static final String urlPassport = "http://passport.renren.com";
 
@@ -431,9 +362,9 @@ public class OpiConstants {
 		}
 	};
 
-	public static final String urlPic001 = "http://pic.xiaonei.com";
+	public static final String urlPic001 = "http://pic.Xx.com";
 
-	public static final String urlPic002 = "http://pic2.xiaonei.com";
+	public static final String urlPic002 = "http://pic2.Xx.com";
 
 	public static final DyString urlHeadUpload = new DyString() {
 
@@ -915,7 +846,7 @@ public class OpiConstants {
 
 	public static final String JEBE_COOKIE_NAME = "jebecookies";
 
-	// #由于原先5q的静态信息域名与校内 img.xiaonei.com 域名冲突 所以5q的静态服务域名改用 txt.5q.com
+	// #由于原先5q的静态信息域名与校内 img.Xx.com 域名冲突 所以5q的静态服务域名改用 txt.5q.com
 	public static final String urlTxt5q = "http://txt.5q.com";
 
 	public static final DyString domainMobile = new DyString() {
@@ -924,7 +855,7 @@ public class OpiConstants {
 		public String toString() {
 			String domainStr = domain.toString();
 			if ("renren.com".equals(domainStr)
-					|| "xiaonei.com".equals(domainStr)) {
+					|| "Xx.com".equals(domainStr)) {
 				return "3g.renren.com";
 			}
 			return "m." + domain;
@@ -993,7 +924,7 @@ public class OpiConstants {
 
 		@Override
 		public String toString() {
-			return "xiaonei.safecenter.disabled";
+			return "Xx.safecenter.disabled";
 		}
 	};
 

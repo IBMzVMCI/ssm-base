@@ -11,17 +11,21 @@ import org.springframework.stereotype.Service;
  * Created by xujinchao on 2016/1/16.
  */
 @Service
-public class SzUserService {
+public class UserService {
 
-    private static Logger logger = LoggerFactory.getLogger(SzUserService.class);
+    private static Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private SzUserDAO szUserDAO;
 
-    public int addNewSzUser(SzUser szUser) {
+    public int addNewUser(SzUser szUser) {
         if (szUser == null) {
             return 0;
         }
         return szUserDAO.addNewSzUser(szUser);
+    }
+
+    public boolean isExistUser(int userId){
+        return szUserDAO.existUser(userId) > 0;
     }
 }

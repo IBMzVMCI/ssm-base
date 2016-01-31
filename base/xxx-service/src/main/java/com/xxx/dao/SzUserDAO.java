@@ -23,4 +23,7 @@ public interface SzUserDAO {
     @SQL("INSERT INTO sz_user(" + INSERT_FIELD +") VALUES(:1.account,:1.passwd,:1.email,:1.creatTime," +
             ":1,updateTime, :1.state, :1.admin)")
     int addNewSzUser(SzUser szUser);
+
+    @SQL("SELECT id FROM sz_user WHERE id = :1")
+    int existUser(int userId);
 }
